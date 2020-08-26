@@ -1,0 +1,11 @@
+docker化springboot工程，http://192.168.1.111/wechat.aspx 转发-> http://192.168.1.111:8080/info/content;
+1.dockerfile与jar放同一目录下
+2.docker build -t mic/forward:v1 .
+3.docker run -d -p 8080:8080 --name forward mic/forward:v1
+
+nginx消息转发设置：
+location = /wechat.aspx{
+  proxy_pass http://192.168.1.111:8080/info/content;
+  proxty_set_header Referer www.computop-china.cn
+}
+
