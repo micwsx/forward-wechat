@@ -19,3 +19,6 @@ keytool -export -alias forward -keystore forward-wechat.jks -storepass 123456 -f
 #jks->p12
 keytool -importkeystore -srckeystore forward-wechat.jks -srcstoretype JKS -deststoretype PKCS12 -destkeystore forward-wechat.p12 -destkeypass 123456
 
+#在线工具jks->pem
+https://www.ssleye.com/jks_pkcs12.html
+
