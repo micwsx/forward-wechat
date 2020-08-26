@@ -228,3 +228,103 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748)
 
 2020-08-26 15:05:12.968  INFO 2452 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-26 16:53:04.838  INFO 16536 --- [main] c.m.project.ForwardWechatApplication     : Starting ForwardWechatApplication on IAM-4152 with PID 16536 (C:\WorkStation\Michael\idea_workplace\forward-wechat\target\classes started by wu in C:\WorkStation\Michael\idea_workplace\forward-wechat)
+2020-08-26 16:53:04.841  INFO 16536 --- [main] c.m.project.ForwardWechatApplication     : No active profile set, falling back to default profiles: default
+2020-08-26 16:53:05.427  INFO 16536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (https)
+2020-08-26 16:53:05.432  INFO 16536 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:05.433  INFO 16536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-26 16:53:05.433  INFO 16536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-26 16:53:05.500  INFO 16536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-26 16:53:05.500  INFO 16536 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 620 ms
+2020-08-26 16:53:05.616  INFO 16536 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 16:53:05.728  INFO 16536 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:06.491  INFO 16536 --- [main] o.a.coyote.http11.Http11NioProtocol      : Pausing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:06.491  INFO 16536 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-08-26 16:53:06.495  INFO 16536 --- [main] o.a.coyote.http11.Http11NioProtocol      : Stopping ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:06.496  INFO 16536 --- [main] o.a.coyote.http11.Http11NioProtocol      : Destroying ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:06.497  INFO 16536 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-26 16:53:06.503 ERROR 16536 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:215)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.micwsx.project.ForwardWechatApplication.main(ForwardWechatApplication.java:13)
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:231)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:278)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	... 10 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	... 12 common frames omitted
+Caused by: java.lang.IllegalArgumentException: C:\WorkStation\Michael\idea_workplace\forward-wechat\forward-wechat.jks (The system cannot find the file specified)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1142)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1228)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:586)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\WorkStation\Michael\idea_workplace\forward-wechat\forward-wechat.jks (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.catalina.startup.CatalinaBaseConfigurationSource.getResource(CatalinaBaseConfigurationSource.java:116)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:198)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:206)
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:283)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+
+2020-08-26 16:53:06.505  INFO 16536 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-26 16:53:56.127  INFO 23176 --- [main] c.m.project.ForwardWechatApplication     : Starting ForwardWechatApplication on IAM-4152 with PID 23176 (C:\WorkStation\Michael\idea_workplace\forward-wechat\target\classes started by wu in C:\WorkStation\Michael\idea_workplace\forward-wechat)
+2020-08-26 16:53:56.130  INFO 23176 --- [main] c.m.project.ForwardWechatApplication     : No active profile set, falling back to default profiles: default
+2020-08-26 16:53:56.769  INFO 23176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (https)
+2020-08-26 16:53:56.774  INFO 23176 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:56.775  INFO 23176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-26 16:53:56.775  INFO 23176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-26 16:53:56.836  INFO 23176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-26 16:53:56.836  INFO 23176 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 616 ms
+2020-08-26 16:53:56.936  INFO 23176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 16:53:57.034  INFO 23176 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:53:57.654  INFO 23176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-26 16:53:57.656  INFO 23176 --- [main] c.m.project.ForwardWechatApplication     : Started ForwardWechatApplication in 1.951 seconds (JVM running for 2.951)
+2020-08-26 16:54:54.021  INFO 23176 --- [https-jsse-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-26 16:54:54.021  INFO 23176 --- [https-jsse-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-26 16:54:54.024  INFO 23176 --- [https-jsse-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2020-08-26 16:54:54.083  INFO 23176 --- [https-jsse-nio-8080-exec-7] c.m.project.controller.InfoController    : {"ContextPath":"","RequestURL":"https://localhost:8080/info/content","header":{"accept-language":"zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","dnt":"1","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},"RequestURI":"/info/content","Method":"GET","ServletPath":"/info/content","parameters":{}}
+2020-08-26 16:55:20.526  INFO 23176 --- [https-jsse-nio-8080-exec-1] c.m.project.controller.InfoController    : {"ContextPath":"","RequestURL":"https://localhost:8080/info/content","header":{"accept-language":"zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","dnt":"1","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},"RequestURI":"/info/content","Method":"GET","ServletPath":"/info/content","parameters":{}}
+2020-08-26 16:56:18.160  INFO 23176 --- [https-jsse-nio-8080-exec-3] c.m.project.controller.InfoController    : {"ContextPath":"","RequestURL":"https://localhost:8080/info/content","header":{"accept-language":"zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","dnt":"1","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},"RequestURI":"/info/content","Method":"GET","ServletPath":"/info/content","parameters":{}}
+2020-08-26 16:57:02.718  INFO 15456 --- [main] c.m.project.ForwardWechatApplication     : Starting ForwardWechatApplication on IAM-4152 with PID 15456 (C:\WorkStation\Michael\idea_workplace\forward-wechat\target\classes started by wu in C:\WorkStation\Michael\idea_workplace\forward-wechat)
+2020-08-26 16:57:02.721  INFO 15456 --- [main] c.m.project.ForwardWechatApplication     : No active profile set, falling back to default profiles: default
+2020-08-26 16:57:03.304  INFO 15456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (https)
+2020-08-26 16:57:03.309  INFO 15456 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:57:03.310  INFO 15456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-26 16:57:03.310  INFO 15456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-08-26 16:57:03.369  INFO 15456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-26 16:57:03.369  INFO 15456 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 578 ms
+2020-08-26 16:57:03.469  INFO 15456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 16:57:03.568  INFO 15456 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-08-26 16:57:04.366  INFO 15456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (https) with context path ''
+2020-08-26 16:57:04.368  INFO 15456 --- [main] c.m.project.ForwardWechatApplication     : Started ForwardWechatApplication in 2.1 seconds (JVM running for 3.07)
+2020-08-26 17:18:38.477  INFO 15456 --- [https-jsse-nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-26 17:18:38.477  INFO 15456 --- [https-jsse-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-26 17:18:38.484  INFO 15456 --- [https-jsse-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-26 17:18:38.547  INFO 15456 --- [https-jsse-nio-8080-exec-8] c.m.project.controller.InfoController    : {"ContextPath":"","RequestURL":"https://localhost:8080/info/content","header":{"accept-language":"zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2","host":"localhost:8080","upgrade-insecure-requests":"1","connection":"keep-alive","dnt":"1","cache-control":"max-age=0","accept-encoding":"gzip, deflate, br","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},"RequestURI":"/info/content","Method":"GET","ServletPath":"/info/content","parameters":{}}

@@ -9,3 +9,13 @@ location = /wechat.aspx{
   proxty_set_header Referer www.computop-china.cn
 }
 
+
+#生成jks
+keytool -genkeypair -alias forward -keyalg RSA -keysize 1024 -validity 365 -dname "CN=Web Server,OU=China,O=www.micwsx.cn,L=Shanghai,S=Shanghai,C=China" -keystore forward-wechat.jks -keypass michael -storepass 123456
+
+#导出cer
+keytool -export -alias forward -keystore forward-wechat.jks -storepass 123456 -file forward.cer
+
+#jks->p12
+keytool -importkeystore -srckeystore forward-wechat.jks -srcstoretype JKS -deststoretype PKCS12 -destkeystore forward-wechat.p12 -destkeypass 123456
+
